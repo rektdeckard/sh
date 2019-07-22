@@ -1,0 +1,30 @@
+Content-Type: application/json
+{
+  "ids": "`["
+}
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "ids": {
+      "type": "string",
+      "description": "\"timer/xxx\",\n\"alarm/xxx\"\n]` (array[string], required) "
+    }
+  }
+}
+Content-Type: application/json
+{
+  "success": true
+}
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "success"
+  ]
+}
