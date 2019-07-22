@@ -16,15 +16,14 @@ backupList="$backupDirectory/$USER-backuplist.txt"
 snapshotFile="$backupDirectory/$USER$suffix.snapshot.db"
 
 # Incremental Backup
-echo -n "Would you like to archive to $backupDirectory on `date +%Y.%m.%d` at `date +%H:%M:%S`? (y/n): "
-read affirm
+read -n 1 -sp "Would you like to archive to $backupDirectory on `date +%Y.%m.%d` at `date +%H:%M:%S`? [y/n]: " affirm
 case $affirm in
-    y|Y|yes|Yes|YES)
+    y|Y )
 # TODO check if other backups exist        
         pushd .
         sudo tar -g/$snapshotFile -cJpvf $backupDirectory/$USER$suffix.tar.xz -T $backupList
         popd ;;
-    n|N|no|No|NO)
+    n )
         echo "Archive cancelled." ;;
     *)
         echo "Invalid response." ;;
