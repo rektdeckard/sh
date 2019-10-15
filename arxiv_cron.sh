@@ -7,6 +7,9 @@
 # Items to be synced are listed in:
 # /home/<user>/Dropbox/Backups/<user>/<user>-backuplist.txt
 
+# Source the required shell variables
+. $HOME/.profile 
+
 # Select backup suffix format. Here uses the <user>-YYYY.MM.DD format.
 suffix="-`date +%Y.%m.%d-%H:%M`"
 
