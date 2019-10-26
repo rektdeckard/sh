@@ -8,15 +8,15 @@
 # /home/<user>/Dropbox/Backups/<user>/<user>-backuplist.txt
 
 # Source the required shell variables
-. $HOME/.profile 
+#. $HOME/.profile
 
 # Select backup suffix format. Here uses the <user>-YYYY.MM.DD format.
 suffix="-`date +%Y.%m.%d-%H:%M`"
 
 # Location of Backup Files and File List
-backupDirectory="$HOME/Dropbox/Backups/$USER"
-backupList="$backupDirectory/$USER-backuplist.txt"
+backupDirectory="$HOME/Dropbox/Backups/$LOGNAME"
+backupList="$backupDirectory/$LOGNAME-backuplist.txt"
 
 # Full Backup
-tar -cJpf $backupDirectory/$USER$suffix.tar.xz -T $backupList
+tar -cJpf $backupDirectory/$LOGNAME$suffix.tar.xz -T $backupList
 
