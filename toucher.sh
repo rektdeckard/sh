@@ -9,9 +9,9 @@
 
 for file in *.tar.xz; do
   [ -f "$file" ] || continue
-  if [[ $file =~ ^user-([[:digit:]]+).([[:digit:]]+).([[:digit:]]+)-([[:digit:]]+).([[:digit:]]+).tar.xz$ ]]; then
-      dateStr="${BASH_REMATCH[1]}${BASH_REMATCH[2]}${BASH_REMATCH[3]}${BASH_REMATCH[4]}${BASH_REMATCH[5]}"
-      touch -m -t "$dateStr" file
+  if [[ $file =~ ^.*-([[:digit:]]+).([[:digit:]]+).([[:digit:]]+)-([[:digit:]]+).([[:digit:]]+).tar.xz$ ]]; then
+      datestr="${BASH_REMATCH[1]}${BASH_REMATCH[2]}${BASH_REMATCH[3]}${BASH_REMATCH[4]}${BASH_REMATCH[5]}"
+      touch -m -t "$datestr" $file
       echo "$file -> date set as $datestr"
     fi
 done
