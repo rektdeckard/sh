@@ -5,5 +5,5 @@
 
 ## Attach to display and unlock X session when connecting remotely
 
-export DISPLAY=:0
+export DISPLAY=:0.0
 sudo loginctl unlock-sessions
